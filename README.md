@@ -2,15 +2,61 @@
 
 - Design and implement SOLID-compatible calendar application
   - Provide UX and functionality similar to commercial calendars
+  - Try to utilize existing SOLID principles (e.g. sharing calendars based on access permissions set by users in SOLID pods)
   - For better adoption implement import/export of iCalendar format
   - Design RDF vocabulary for storing calendar data, reusing existing vocabularies
   - Implementation decisions should be based on analysis of existing SOLID applications and available tooling
 - To demonstrate ability to share calendar data across multiple applications, create small to application to read and modify existing calendar, following SOLID principles
-- Development utilizes production grade tools and principles
-  - CI/CD pipelines utilized during development
-  - Use of tools for code quality control such as linters or code formatters
+- Development utilizes following tools and practises
+  - CI/CD is setup for development
+  - Code quality control tools such as linters or code formatters
   - Application is easily deployable
   - Application functionality is testable by automated tests
+
+# Plans
+
+### October 2022
+
+- Specify initial functionality requirements
+- Find Material UI and FullCalendar components to support the requirements
+- Add development tools to the project - ESLint, Prettier, Webpack build
+- Create initial UI mock for SPA
+  - working SOLID authentication
+  - Default view when application is loaded (to enter solid pod)
+
+#### End of October 2022
+- Start working on MVP that will be initially implemented for first iteration (e.g. initial version of day view + events)
+  - Convert its model to RDF vocabularies
+  - Implement data layer operations with SOLID storage
+  
+### November 2022
+- Finish MVP from last month with UI part and logic that will work with data from SOLID pod
+- Finish specification
+  - Functional requirements
+  - Interactions using SOLID - give access to calendars of other users
+
+### December 2022
+- Define model of entities used in application
+- Convert rest of application model to SOLID model / RDF vocabularies
+
+### January - start of February 2023
+- Exam period - less time for implementation
+- Setup CI/CD and tests (Cypress, Jest)
+
+- **Parts that will be finished:**
+  - MVP
+  - Functional requirements
+
+### February - March 2023
+- Create UI mocks of SPA using Material UI and Fullcalendar
+- Start implementing rest of the application - connecting logic, storage and UI parts
+
+### April 2023 - July 2023
+- Implementation
+
+### October - December 2023
+- Thesis text
+
 
 # Analysis
 
@@ -20,7 +66,7 @@ To demonstrate SOLID principles, we want to manage access control to other calen
 
 Important point is that if calendar design and functionality is not strictly defined, we should based our implementation choices on initial requirement to have good UX. From scratch implementation that fulfils UX requirement would require a lot of time, including analysis of correct design and converting that design into implementation. Creating tool such as calendar should not be done entirely from sratch as there must exist already fine solutions. Thus from software engineering point of view (not reinventing the wheel), it would make more sense to re-use feature rich implementation of the existing calendar UIs. In analysis part there should be some comparison of available libraries, still considering own solution as there is an option to implement only limited subset of calendar features, but final result of such implementation is not astonishing for an user. In case of reusing some existing implementation, calendar functionality will have functionality based on offered UI components.
 
-*{Currently [FullCalendar](https://fullcalendar.io) looks like a good fit. I want to use TS and React and it fulfils all requirements, using MIT or GPLv3 license.}*
+*Currently [FullCalendar](https://fullcalendar.io) looks like a good fit. I want to use TS and React and it fulfils all requirements, using MIT or GPLv3 license.*
 
 Important parts while selecting existing calendar UI solution:
 - tech stack - React / TS preferred
@@ -64,12 +110,9 @@ There is a [SOLID calendar project](https://bitbucket.org/dylanmartin/solidcalen
 
 # Implementation
 
-I need to check if Next.js can be used with SOLID authentication, especially deploying it to Vercel. Application architecture - should be still some part running on server? I would like to try using server side rendering with Next.js.
-
 *Draft:*
 
-- *Next.js (React / Typescript) app implementing calendar with FullCalendar*
+- *Next.js (React / Typescript) app implementing calendar with FullCalendar and MaterialUI*
 - *Using Inrupt Authentication, soukai-solid*
 - *Docker local deployment, Vercel deployments with CI/CD*
 - *ESLint, Prettier, Webpack*
-
