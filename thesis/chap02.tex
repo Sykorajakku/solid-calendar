@@ -1,5 +1,29 @@
-\chapter{Title of the second chapter}
+\chapter{Analysis}
 
-\section{Title of the first subchapter of the second chapter}
+\section{Calendar Features}
 
-\section{Title of the second subchapter of the second chapter}
+\subsection*{Calendar Events}
+
+\subsection*{Calendar Views}
+The application should support displaying calendar events in different calendar views, such as a view of calendar events in a single day or week. Views in different timespans increase the application's usability by hiding non-important events or providing a valuable overview of future events.
+In the following subsection, we will introduce functional and non-functional requirements that each calendar view should support and then define specific calendar views that should be available in the application.
+
+\subsubsection*{Shared functionality of calendar views}
+In this subsection, we define a set of features that each calendar view should offer in the application. Defining such features increases the application's usability by defining expectable behavior shared in each calendar view.
+As we want to make the calendar application interactive, users should be able to modify calendar events displayed in a calendar view by simply moving the visualization of the event from one timeslot to another. By modifying an event in a calendar view, users can set a different start time for an event or change the duration of an event, as shown in figure [X], where the user \textit{drag and drops} an event to a different location, changing start of the event.
+
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}]
+    \item \label{app:req:dragdrop} Users should be able to interactively modify start and duration of events displayed in calendar views.
+\end{enumerate}
+
+\subsubsection*{Day view}
+
+\subsubsection*{Week view}
+
+\subsubsection*{Month view}
+
+\subsection*{Sharing}
+
+\subsection*{Import or Export of iCalendar Format}
+
+\section{SOLID features}
