@@ -4,6 +4,42 @@
 
 \subsection*{Calendar Events}
 
+The essential part of the calendar is its events. Therefore, the user needs to be able to add, remove and modify calendar events. Next to those operations, there is a need to display event data in a structured way to emphasize important information and hide the details. On the other hand, users should not feel restricted by filling many unnecessary fields. Users should always be able to define crucial calendar information - such as start date, event duration, and short text used as a title. In addition, many events occur at some physical or virtual location. Therefore, fields containing location information should be available. As we are creating a calendar application based on SOLID specification with an option to store and query any information as linked data, we could make some event information, such as the physical location of an event, structured and describable by linked data vocabularies. To not decrease usability and allow users to work with the calendar without any linked data knowledge, we need to design an interactive form that would enable users to define information such as an address in a structured way. In the background, such information would be stored as linked data, making them available for further processing by other applications. In the case of address information, an application could access structured address data and make queries such as finding all events occurring in the same city in a given year.
+
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}]
+    \item \label{app:req:events1} In calendar events, users can define the following structured data that can be consumed and queried by other applications
+        \begin{itemize}
+            \item Start time and duration of a calendar event
+            \item Optional physical location where an event occurs
+            \item Optional location of an virtual meeting in the form of URL
+        \end{itemize}
+\end{enumerate}
+
+Next to the data that can be structured, a user should be able to write any other information in a block of unstructured text. File attachments are an additional feature that would increase calendar usability. The calendar application should allow storing arbitrary attachments such as pictures, documents, or recordings.
+
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:events2} In calendar events, users can define the following unstructured data
+        \begin{itemize}
+            \item Optional description text
+            \item Optional file attachments
+        \end{itemize}
+\end{enumerate}
+
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:events3} User can define \textit{reccuring events}.
+        \begin{itemize}
+            \item Multiple future occurences of single reccuring event can be modified in single event update.
+        \end{itemize}
+\end{enumerate}
+
+\subsection*{Calendar Groups}
+
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:groups1} Users can group events into calendar groups.
+    \item \label{app:req:groups2} Users can create and remove calendar groups.
+    \item \label{app:req:groups3} Calendar events can be assigned from one calendar group to another.
+\end{enumerate}
+
 \subsection*{Calendar Views}
 The application should support displaying calendar events in different calendar views, such as a view of calendar events in a single day or week. Views in different timespans increase the application's usability by hiding non-important events or providing a valuable overview of future events.
 In the following subsection, we will introduce functional and non-functional requirements that each calendar view should support and then define specific calendar views that should be available in the application.
@@ -12,8 +48,12 @@ In the following subsection, we will introduce functional and non-functional req
 In this subsection, we define a set of features that each calendar view should offer in the application. Defining such features increases the application's usability by defining expectable behavior shared in each calendar view.
 As we want to make the calendar application interactive, users should be able to modify calendar events displayed in a calendar view by simply moving the visualization of the event from one timeslot to another. By modifying an event in a calendar view, users can set a different start time for an event or change the duration of an event, as shown in figure [X], where the user \textit{drag and drops} an event to a different location, changing start of the event.
 
-\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}]
-    \item \label{app:req:dragdrop} Users should be able to interactively modify start and duration of events displayed in calendar views.
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:views1} Users should be able to interactively modify start and duration of events displayed in calendar views.
+    \item \label{app:req:views2} Users can create multiple instances of calendars view sets to accomodate specific preferences.
+        \begin{itemize}
+            \item User can select which calendar groups to display.
+        \end{itemize}
 \end{enumerate}
 
 \subsubsection*{Day view}
@@ -24,6 +64,26 @@ As we want to make the calendar application interactive, users should be able to
 
 \subsection*{Sharing}
 
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:sharing1} User can create publicly shared calendar group that is readonly
+    \item \label{app:req:sharing2} User can share calendar group only to group of users    
+        \begin{itemize}
+            \item Calendar group is privately shared and readonly
+            \item Calendar group is privately shared and modifyable by each user with access
+        \end{itemize}
+    \item \label{app:req:sharing3} Users can create copy of other calendar groups that are shared with them
+    \item \label{app:req:sharing4} Owner of calendar event can add participants to event
+        \begin{itemize}
+            \item Participants with access to the event can modify participation status
+        \end{itemize}
+\end{enumerate}
+
 \subsection*{Import or Export of iCalendar Format}
 
-\section{SOLID features}
+\begin{enumerate}[label=\color{reqcolor}\textbf{R{\arabic*}}, resume]
+    \item \label{app:req:ical1} Calendar can be exported to iCalendar format
+        \begin{itemize}
+            \item Publicly shared attachments defined in ref[] can be exported
+        \end{itemize}
+    \item \label{app:req:ical2} Calendar can be imported from iCalendar format
+\end{enumerate}
