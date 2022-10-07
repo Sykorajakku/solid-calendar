@@ -42,6 +42,12 @@ The address form needs to cover many specific scenarios. For example, users shou
 
 \begin{enumerate}[label=\color{usecasecolor}\textbf{U{\arabic*}}]
     \item \label{app:uc:event1} Specifying address with no auto-complete result
+        \begin{enumerate}
+            \item A user opens form to create a new event and set address value to auto-complete field
+            \item Address auto-complete search provides no suggestions for specified value or auto-complete suggestion is not suitable to user
+            \item User creates the event with initial address value selected
+            \item Application stores provided address value as an generic address value described by single string
+        \end{enumerate}
 \end{enumerate}
 
 
