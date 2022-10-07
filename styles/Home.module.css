@@ -50,6 +50,10 @@
   text-align: center;
 }
 
+.name {
+  color: #9063CD;
+}
+
 .description {
   margin: 4rem 0;
   line-height: 1.5;
