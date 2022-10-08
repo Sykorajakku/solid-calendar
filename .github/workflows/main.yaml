@@ -9,6 +9,16 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm
+      - name: Run ESLint
+        run: eslint .
+      - name: Run Prettier
+        run: prettier --check .
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest
