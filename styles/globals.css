@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: "Dinot";
   src: url("../public/fonts/dinot/Dinot-Regular.otf") format("opentype");
@@ -33,7 +32,6 @@ body,
   font-size: 100% !important;
   height: 100%;
 }
-
 
 a {
   color: inherit;
