@@ -23,7 +23,8 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: Dinot;
+  font-family: Dinot, Menlo, Monaco, Lucida Console, Liberation Mono,
+    DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
 html,
