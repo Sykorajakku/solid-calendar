@@ -1,10 +1,39 @@
+
+@font-face {
+  font-family: "Dinot";
+  src: url("../public/fonts/dinot/Dinot-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dinot";
+  src: url("../public/fonts/dinot/Dinot-Bold.otf") format("opentype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Dinot";
+  src: url("../public/fonts/dinot/Dinot-Light.otf") format("opentype");
+  font-weight: lighter;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: Dinot;
 }
+
+html,
+body,
+#__next {
+  font-size: 100% !important;
+  height: 100%;
+}
+
 
 a {
   color: inherit;
