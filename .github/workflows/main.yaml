@@ -14,11 +14,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Install modules
-        run: npm
+        run: npm install
       - name: Run ESLint
-        run: eslint .
+        run: npm run lint
       - name: Run Prettier
-        run: prettier --check .
+        run: npm run format
   sonarcloud:
     name: SonarCloud
     runs-on: ubuntu-latest

@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint . --fix --max-warnings=0",
+    "format": "prettier --write --ignore-unknown",
     "prepare": "husky install"
   },
   "lint-staged": {
