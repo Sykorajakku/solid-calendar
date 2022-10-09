@@ -5,6 +5,7 @@ const Footer = () => {
         flex: "0 1 40px",
         backgroundColor: "#f7f9fb",
         margin: "5px 5px 5px 5px",
+        marginTop: "auto",
         borderTopLeftRadius: "8px",
         borderTopRightRadius: "8px",
       }}

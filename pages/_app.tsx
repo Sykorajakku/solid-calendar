@@ -6,7 +6,7 @@ import Authentication from "../components/authentication/authentication";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
-    <SessionProvider sessionId="solid-auth">
+    <SessionProvider sessionId="solid-auth" restorePreviousSession>
       <Layout>
         <Authentication>
           <Component {...pageProps} />

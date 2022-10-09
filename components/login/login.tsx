@@ -6,7 +6,7 @@ const LoginForm = () => {
   const login = () => {
     session.login({
       oidcIssuer: "https://inrupt.net",
-      redirectUrl: "https://solid-calendar-taupe.vercel.app",
+      redirectUrl: window.location.origin,
     });
   };
 
@@ -15,9 +15,13 @@ const LoginForm = () => {
       style={{
         display: "flex",
         flexFlow: "row",
-        flexDirection: "row-reverse",
+        flexDirection: "row",
       }}
     >
+      <div style={{ margin: "5px 5px 5px 5px" }}>
+        Dropdown will be here. Login button redirrects to https://inrupt.net
+      </div>
+
       <div
         style={{
           height: "25px",
@@ -28,6 +32,9 @@ const LoginForm = () => {
           paddingRight: "5px",
           borderRadius: "5px",
           cursor: "pointer",
+          marginLeft: "auto",
+          marginRight: "5px",
+          marginTop: "5px",
         }}
         onClick={login}
       >

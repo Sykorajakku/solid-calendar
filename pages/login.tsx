@@ -68,6 +68,10 @@ const Login: NextPage = () => {
         >
           How to start using SOLID Calendar?
         </div>
+
+        <div style={{ margin: "5px 5px 5px 5px" }}>
+          Short text describing SOLID pods and usage.
+        </div>
       </div>
     </div>
   );
